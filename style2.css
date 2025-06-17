@@ -1,0 +1,388 @@
+        /* Variabel CSS - Sesuaikan dengan tema utama Anda */
+        :root {
+            --primary-color: #007aff; /* Apple Blue */
+            --secondary-color: #f2f2f7; /* Apple Light Gray */
+            --text-color: #1d1d1f; /* Apple Dark Gray */
+            --light-text-color: #8e8e93; /* Apple Medium Gray */
+            --white-color: #fff;
+            --border-color: #d1d1d6; /* Apple Border Gray */
+            --shadow-color: rgba(0, 0, 0, 0.12);
+            --success-color: #34c759; /* Apple Green */
+            --warning-color: #ff9500; /* Apple Orange */
+            --error-color: #ff3b30; /* Apple Red */
+            --glow-color: #00aaff; /* For glowing buttons */
+            --dark-background: #121212; /* Dark background */
+            --dark-text: #ffffff; /* Light text on dark background */
+            --accent-color: #a78bfa; /* Stylish accent color (Purple/Violet) */
+        }
+
+        /* Gaya Dasar */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--dark-background); /* Dark background */
+            color: var(--dark-text); /* Light text */
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling during loading initially */
+        }
+
+        /* Loading Screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-background);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            transition: opacity 1s ease;
+            text-align: center;
+            overflow: hidden; /* Ensure content doesn't scroll */
+        }
+
+        #loading-screen h1 {
+            font-size: 2.5em; /* Lebih besar */
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px var(--accent-color), 0 0 25px var(--accent-color); /* Efek seram/megah */
+            animation: fadeInText 1.5s ease-out forwards;
+            letter-spacing: 2px;
+        }
+
+        #loading-screen p {
+            font-size: 1.3em; /* Lebih besar */
+            color: var(--dark-text);
+            margin-bottom: 30px;
+            animation: fadeInText 1.8s ease-out forwards;
+        }
+
+        /* Hide loading screen after loaded */
+        body.loaded #loading-screen {
+            opacity: 0;
+            pointer-events: none; /* Make it unclickable */
+        }
+        
+        /* Loading Spinner */
+        #loading-screen .spinner {
+            width: 40px; /* Lebih besar */
+            height: 40px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top-color: var(--white-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: rgba(0, 122, 255, 0.1); /* Translucent header */
+            color: var(--dark-text);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header .back-arrow {
+            font-size: 1.5em;
+            margin-right: 15px;
+            cursor: pointer;
+            color: var(--dark-text);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        .header .back-arrow:hover {
+            opacity: 0.8;
+        }
+
+        .header h1 {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 20px;
+            max-width: 450px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.05); /* Translucent content area */
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 1px solid var(--border-color);
+        }
+
+        .main-content h2 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.8em;
+            text-shadow: 0 0 5px var(--accent-color);
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: rgba(0, 122, 255, 0.1);
+            border-radius: 8px;
+            color: var(--dark-text);
+            border: 1px solid rgba(0, 122, 255, 0.3); /* Border untuk estetik */
+        }
+        .welcome-message p {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        .welcome-message strong {
+            color: var(--accent-color);
+        }
+
+        .script-total-downloads {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-shadow: 0 0 3px rgba(167, 139, 250, 0.5); /* Shadow untuk teks */
+        }
+        .script-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .script-item {
+            background-color: rgba(255, 255, 255, 0.05); /* Translucent script items */
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        .script-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .script-item h3 {
+            font-size: 1.1em;
+            color: var(--dark-text);
+            margin-bottom: 10px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .script-item p {
+            font-size: 0.85em;
+            color: var(--light-text-color);
+            margin-bottom: 15px;
+        }
+
+        /* Button Group for Download and Preview */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px; /* Space from description */
+        }
+
+        .download-button, .preview-button {
+            flex: 1; /* Make buttons take equal width in the group */
+            min-width: 120px; /* Minimum width for buttons */
+            display: inline-flex; /* Use flex for icon & text alignment */
+            align-items: center;
+            justify-content: center;
+            padding: 12px 15px; /* Adjust padding for two buttons */
+            background-color: var(--success-color); /* Green for download */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .preview-button {
+            background-color: #8a2be2; /* Blue-violet for preview */
+        }
+
+        /* Glowing Effect for both button types */
+        .download-button::before, .preview-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent 0deg, transparent 90deg,
+                var(--glow-color) 180deg, var(--glow-color) 270deg,
+                transparent 360deg
+            );
+            transform: rotate(0deg);
+            animation: rotateGlow 2s linear infinite;
+            z-index: -1;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        .download-button:hover::before, .preview-button:hover::before {
+            opacity: 0.8;
+        }
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .download-button span, .preview-button span {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Space between icon and text */
+        }
+        .download-button i, .preview-button i {
+            font-size: 1.1em;
+        }
+
+        .download-button:hover {
+            background-color: #218838; /* Darker green on hover */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4); /* Stronger shadow on hover */
+            transform: translateY(-2px);
+        }
+        .preview-button:hover {
+            background-color: #7a20c2; /* Darker purple on hover */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+            transform: translateY(-2px);
+        }
+
+        .download-count-display {
+            font-size: 0.8em;
+            color: var(--light-text-color);
+            margin-top: 10px;
+            display: block;
+        }
+
+        .subscribe-section {
+            margin-top: 40px;
+            padding: 30px 15px; /* Added padding */
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.03); /* Slightly different background */
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            position: relative; /* For background effect */
+            overflow: hidden;
+        }
+        .subscribe-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(167, 139, 250, 0.1), transparent); /* Subtle gradient overlay */
+            pointer-events: none;
+            z-index: 0;
+        }
+        .subscribe-section p {
+            font-size: 1em; /* Slightly larger text */
+            color: var(--dark-text); /* White text */
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            font-weight: 500;
+        }
+        .subscribe-section p strong {
+            color: var(--accent-color); /* Highlight with accent color */
+            font-weight: 700;
+            text-shadow: 0 0 5px var(--accent-color);
+        }
+
+        .subscribe-section .channel-link {
+            display: inline-block;
+            padding: 12px 25px; /* Larger padding */
+            background-color: #e74c3c; /* YouTube Red */
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .subscribe-section .channel-link:hover {
+            background-color: #c0392b;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+            transform: translateY(-2px);
+        }
+        .subscribe-section .channel-link i {
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+
+        .subscribe-section .contact-info {
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: var(--light-text-color);
+            position: relative;
+            z-index: 1;
+        }
+        .subscribe-section .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                margin: 15px;
+                padding: 15px;
+            }
+            .main-content h2 {
+                font-size: 1.5em;
+            }
+            .download-button, .preview-button {
+                padding: 10px 15px; /* Adjust padding for smaller screens */
+                font-size: 0.85em;
+                gap: 5px;
+                min-width: unset; /* Remove min-width constraint */
+            }
+            .download-button span, .preview-button span {
+                flex-direction: column; /* Stack icon and text */
+                gap: 2px;
+            }
+            .download-button i, .preview-button i {
+                margin-right: 0;
+            }
+            .button-group {
+                flex-direction: column; /* Stack buttons vertically */
+            }
+            #loading-screen h1 {
+                font-size: 1.8em;
+            }
+            #loading-screen p {
+                font-size: 1em;
+            }
+        }

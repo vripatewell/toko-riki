@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>Selamat Datang di Rikishopreal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="welcomeScreen">
+        <img src="logo.jpg" alt="Rikishopreal Logo"> <h1>Selamat Datang di Rikishopreal</h1>
+        <p>Platform layanan digital terbaik untuk Anda.</p>
+        <div class="spinner"></div>
+    </div>
+
+    <div class="offcanvas-menu" id="offcanvasMenu">
+        <div class="menu-header">
+            <span>Rikishopreal Menu</span>
+            <i class="fas fa-times close-btn" id="closeMenu"></i>
+        </div>
+        <ul>
+            <li><a href="#" data-page="home-page"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="#" id="openAboutUsModal"><i class="fas fa-info-circle"></i> Tentang Kami</a></li> <li><a href="free-scripts.html" rel="noopener noreferrer"><i class="fas fa-code"></i> Script Gratis</a></li> <li class="menu-section-title">Informasi & Bantuan</li>
+            <li><a href="#" data-page="chat-ai-page"><i class="fas fa-robot"></i> Chat AI (Beta)</a></li>
+            <li><a href="#" data-page="chat-seller-page"><i class="fas fa-comment-dots"></i> Chat Seller</a></li>
+            <li><a href="#" data-page="hubungi-kami-page"><i class="fas fa-headset"></i> Hubungi Kami</a></li>
+        </ul>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div id="aboutUsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeAboutUsModal">×</span>
+            <h3>Kenapa Memilih Rikishopreal?</h3>
+            <p>Kami menyediakan layanan digital terbaik dan terlengkap untuk memenuhi kebutuhan Anda. Dengan harga terjangkau dan dukungan pelanggan 24/7, kami berkomitmen untuk memberikan pengalaman yang memuaskan.</p>
+            <p>Temukan berbagai pilihan VPS, panel hosting, script unggulan, jasa profesional, dan sewa bot terpercaya. Bergabunglah dengan ribuan pelanggan puas lainnya!</p>
+            <p>webiste kami masih dalam pengembangan dan masih banyak produk yang blom tersedia maka dari itu kami meminta suport dari kalian, mohon maaf jika ada kekurangan di webiste kami, kami akan meningkat kan lagi website ini agar menjadi lebih baik terimakasih!</p>
+            <p><strong>Kualitas Terjamin:</strong> Kami hanya menawarkan produk dan layanan dengan kualitas terbaik.</p>
+            <p><strong>Harga Kompetitif:</strong> Dapatkan penawaran terbaik untuk semua kebutuhan digital Anda.</p>
+            <p><strong>Dukungan Responsif:</strong> Tim kami siap membantu Anda melalui chat dan WhatsApp.</p>
+        </div>
+    </div>
+
+    <div id="genericScriptMenuModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeGenericScriptMenuModal">×</span>
+            <h3 id="genericScriptMenuTitle">Menu Script</h3>
+            <div id="genericScriptMenuContent" class="script-menu-display">
+                </div>
+        </div>
+    </div>
+
+
+    <div class="container" id="mainContainer">
+        <div class="main-app-header">
+            <i class="fas fa-bars menu-icon" id="openMenu"></i>
+            <span class="app-title">Selamat Datang di Website Rikishopreal</span>
+            <div class="cart-icon" id="openCart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+
+        <div class="page-content active" id="home-page">
+            <div class="info-bar">
+                <div class="date-time" id="currentDateTime"></div>
+                <div class="visitor-count" id="visitorCountDisplay">
+                    <i class="fas fa-users"></i> </div>
+            </div>
+
+<div class="main-content">
+                <div class="banner-carousel-container">
+                    <div class="banner-carousel" id="bannerCarousel">
+                        <div class="banner-item" style="background-image: url('https://img1.pixhost.to/images/6543/611899525_media.jpg');">
+
+                        </div>
+                        <div class="banner-item" style="background-image: url('https://img1.pixhost.to/images/6543/611898882_media.jpg');">
+
+                        </div>
+                        <div class="banner-item" style="background-image: url('https://img1.pixhost.to/images/6543/611899568_media.jpg');">
+
+                        </div>
+                    </div>
+                    <div class="banner-pagination" id="bannerPagination">
+                        <span class="banner-dot active" data-index="0"></span>
+                        <span class="banner-dot" data-index="1"></span>
+                        <span class="banner-dot" data-index="2"></span>
+                    </div>
+                </div>
+
+                <h3>Layanan kami</h3>
+                <div class="service-grid">
+                    <a href="#" class="service-item" data-service="Panel">
+                        <img src="image/panel.png" alt="Panel Icon">
+                        <span>Panel</span>
+                    </a>
+                    <a href="#" class="service-item" data-service="VPS">
+                        <img src="image/vps.png" alt="VPS Icon">
+                        <span>VPS</span>
+                    </a>
+                    <a href="#" class="service-item" data-service="Script">
+                        <img src="image/script.png" alt="Script Icon">
+                        <span>Script</span>
+                    </a>
+                    <a href="#" class="service-item" data-service="Jasa">
+                        <img src="image/jasa.png" alt="Jasa Icon">
+                        <span>Jasa</span>
+                    </a>
+                    <a href="#" class="service-item" data-service="murid">
+                        <img src="image/murid.png" alt="murid Icon">
+                        <span>join murid</span>
+                    </a>
+                    <a href="#" class="service-item" data-service="Sewa Bot">
+                        <img src="image/bot.png" alt="Sewa Bot Icon">
+                        <span>Sewa Bot</span>
+                    </a>
+                     <a href="#" class="service-item" data-service="stock">
+                        <img src="image/stock.png" alt="stock Icon">
+                        <span>stock akun</span>
+                    </a>
+                    <a href="#" class="service-item" data-service="suntik">
+                        <img src="image/suntik.png" alt="suntik Icon">
+                        <span>suntik sosmed</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content" id="service-detail-page">
+            <h2><i class="fas fa-arrow-left back-arrow" data-back-to="home-page" id="backToHomeFromService"></i> <span id="serviceDetailPageTitle"></span></h2>
+            <div class="product-list" id="productList">
+                </div>
+            <div id="productDetailView" style="display: none;">
+                <div class="product-detail">
+                    <h3 id="detailProductName"></h3>
+                    <div id="detailProductDescriptionContent"></div> <p class="price" id="detailProductPriceContainer"><span id="detailProductPrice"></span></p>
+                    <div class="actions" id="detailProductActions">
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content" id="cart-page">
+            <h2><i class="fas fa-arrow-left back-arrow" data-back-to="home-page" id="backFromCart"></i> Keranjang Belanja</h2>
+            <ul id="cartItems">
+                </ul>
+            <div class="cart-summary">
+                <span>Total:</span>
+                <span id="cartTotal">Rp 0</span>
+            </div>
+            <button class="checkout-button" id="checkoutButton">Pesan via WhatsApp</button>
+            <p style="text-align: center; margin-top: 10px; font-size: 0.85em; color: var(--light-text-color);">*Pesanan akan dikirimkan ke WhatsApp admin.</p>
+        </div>
+
+        <div class="page-content" id="chat-ai-page">
+            <h2><i class="fas fa-arrow-left back-arrow" data-back-to="home-page"></i> AI Assistant</h2>
+            <div class="chat-interface">
+                <div class="chat-messages" id="chatAiMessagesPage">
+                    <div class="message ai-message">Halo! Ada yang bisa saya bantu hari ini?</div>
+                </div>
+                <div id="chatAiLoadingPage" class="chat-loading" style="display: none;">
+                    <div class="spinner"></div> AI sedang memproses...
+                </div>
+                <div class="chat-input-area">
+                    <textarea id="chatAiInputPage" placeholder="Ketik pertanyaan Anda..." rows="1"></textarea>
+                    <button id="sendChatAiBtnPage" aria-label="Kirim Pesan">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+                            <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" fill="currentColor" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <p style="font-size:0.8em; text-align:center; margin-top:15px; color: var(--light-text-color);">
+                Menggunakan model AI placeholder. AI ini masih dalam pengembangan.
+            </p>
+        </div>
+
+        <div class="page-content" id="chat-seller-page">
+            <h2><i class="fas fa-arrow-left back-arrow" data-back-to="home-page"></i> Chat Seller</h2>
+            <p style="text-align: center; padding: 20px; color: var(--light-text-color);">Klik tombol di bawah untuk chat langsung dengan seller via WhatsApp.</p>
+            <div style="text-align: center;">
+                <button class="checkout-button" onclick="window.open('https://api.whatsapp.com/send?phone=' + WA_SELLER_NUMBER + '&text=Halo%20Seller%2C%20saya%20ingin%20bertanya...', '_blank');">Chat WhatsApp Seller</button>
+            </div>
+        </div>
+        <div class="page-content" id="hubungi-kami-page">
+            <h2><i class="fas fa-arrow-left back-arrow" data-back-to="home-page"></i> Hubungi Kami</h2>
+            <p style="text-align: center; padding: 20px; color: var(--light-text-color);">Informasi kontak kami.</p>
+            <div style="text-align: center; margin-bottom: 30px;">
+                <button class="checkout-button" onclick="window.open('https://api.whatsapp.com/send?phone=' + WA_ADMIN_NUMBER + '&text=Halo%20admin%20Rikishopreal...', '_blank');">Hubungi Admin via WhatsApp</button>
+            </div>
+            </div>
+    </div>
+
+<script src="rikishop.js"></script>
+</body>
+</html>
